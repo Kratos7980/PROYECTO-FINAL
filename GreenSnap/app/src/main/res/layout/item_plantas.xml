@@ -16,8 +16,8 @@
         app:cardElevation="5dp"
         app:cardCornerRadius="8dp">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@drawable/azalea_hortinno" />
 
             <TextView
                 android:id="@+id/nombrePlantaItem"
@@ -37,7 +37,7 @@
                 android:layout_marginBottom="10dp"
                 android:text="@string/app_name"
                 android:textSize="19sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/descripcionItem"

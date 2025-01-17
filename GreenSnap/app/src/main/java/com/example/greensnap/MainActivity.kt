@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         val listPlantas:ArrayList<Planta> = PlantasHelper.recuperarPlantasBD(this)
         val rv:RecyclerView = binding.rvItemsList
-        myAdapter = PlantasAdapter(listPlantas)
-//        rv.layoutManager = LinearLayoutManager(this)
+        myAdapter = PlantasAdapter(listPlantas, this)
+        rv.layoutManager = LinearLayoutManager(this)
         rv.adapter = myAdapter
     }
 }
