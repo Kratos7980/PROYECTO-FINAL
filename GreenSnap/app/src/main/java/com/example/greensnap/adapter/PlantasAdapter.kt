@@ -6,9 +6,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.greensnap.MainActivity
+import com.example.greensnap.vista.PantallaPlantas
 import com.example.greensnap.R
-import com.example.greensnap.dbconexion.PlantasHelper
 import com.example.greensnap.model.Planta
 
 class PlantasAdapter (private val listPlantas:ArrayList<Planta>, private val context: Context) : RecyclerView.Adapter<PlantasViewHolder>(){
@@ -36,7 +35,7 @@ class PlantasAdapter (private val listPlantas:ArrayList<Planta>, private val con
 
         // Defino en onClick de los items
         holder.itemView.setOnClickListener{
-            val intent:Intent = Intent(context, MainActivity::class.java)
+            val intent:Intent = Intent(context, PantallaPlantas::class.java)
             val bundle:Bundle = Bundle()
             context.startActivity(intent)
         }

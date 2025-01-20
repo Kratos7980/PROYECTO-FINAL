@@ -4,7 +4,6 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import androidx.core.content.ContextCompat.getString
-import com.example.greensnap.MainActivity
 import com.example.greensnap.R
 
 class DBManager(private val context:Context, dbName:String, factory:SQLiteDatabase.CursorFactory?, dbVersion:Int): SQLiteOpenHelper(context,dbName,factory,dbVersion) {
@@ -22,6 +21,9 @@ class DBManager(private val context:Context, dbName:String, factory:SQLiteDataba
         db.execSQL("CREATE TABLE CATEGORIAS (ID_CATEGORIA INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NOMBRE_CATEGORIA TEXT, DESCRIPCION TEXT, CODIGO_CUIDADOS INTEGER, FOREIGN KEY (CODIGO_CUIDADOS) REFERENCES CUIDADOS(CODIGO_CUIDADOS))")
         db.execSQL("CREATE TABLE PLANTAS(ID_PLANTA INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NOMBRE_PLANTA TEXT, TIPO TEXT, IMAGEN TEXT, ID_CATEGORIA INTEGER, FOREIGN KEY (ID_CATEGORIA) REFERENCES CATEGORIAS(ID_CATEGORIA))")
         db.execSQL("CREATE TABLE JARDIN (ID_PLANTA INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NOMBRE_PLANTA TEXT)")
+        db.execSQL("CREATE TABLE USUARIOS (ID_USUARIO INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NOMBRE_USUARIO TEXT, CORREO TEXT, PASSWORD TEXT)")
+
+        db.execSQL("INSERT INTO USUARIOS (NOMBRE_USUARIO, CORREO, CONTRASENA) VALUES ('admin', 'admin@admin', 'admin')")
 
         db.execSQL("INSERT INTO CUIDADOS (CODIGO_CUIDADOS, ILUMINACION, TEMPERATURA, SUSTRATO, RIEGO, HUMEDAD, ABONO, PODA, ENFERMEDADES, TRANSPLANTE) VALUES (10, '"+ getString(context,R.string.luz_azalea) + "', '" + getString(context,R.string.temperatura_azalea) + "', '" + getString(context, R.string.sustrato_azalea) + "', '" + getString(context, R.string.riego_azalea) + "', '" + getString(context, R.string.humedad_azalea) + "', '" + getString(context, R.string.abono_azalea) + "', '" + getString(context, R.string.poda_azalea) + "', '" + getString(context, R.string.enfermedades_azalea) + "', '" + getString(context, R.string.trasplante_azalea) + "')")
         db.execSQL("INSERT INTO CUIDADOS (CODIGO_CUIDADOS, ILUMINACION, TEMPERATURA, SUSTRATO, RIEGO, HUMEDAD, ABONO, PODA, ENFERMEDADES, TRANSPLANTE) VALUES (20, '"+ getString(context, R.string.luz_begonia) + "', '" + getString(context, R.string.temperatura_begonia) + "', '" + getString(context, R.string.sustrato_begonia) + "', '" + getString(context, R.string.riego_begonia) + "', '" + getString(context, R.string.humedad_begonia) + "', '" + getString(context, R.string.abono_begonia) + "', '" + getString(context, R.string.poda_begonia) + "', '" + getString(context, R.string.enfermedades_begonia) + "', '" + getString(context, R.string.trasplante_begonia) + "')")
