@@ -1,4 +1,4 @@
-package com.example.greensnap.vista
+package com.example.greensnap.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -19,9 +19,16 @@ class PantallaPlantas() : AppCompatActivity() {
         binding = ActivityPantallaPlantasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Recupero la lista de plantas
         val listPlantas:ArrayList<Planta> = PlantasHelper.recuperarPlantasBD(this)
+
+        //Muestro la lista de plantas en el recycler view
         val rv:RecyclerView = binding.rvItemsList
+
+        //Creo el adaptador
         myAdapter = PlantasAdapter(listPlantas, this)
+
+        //Añado el adaptador al recycler view
         rv.layoutManager = LinearLayoutManager(this)
         rv.adapter = myAdapter
     }

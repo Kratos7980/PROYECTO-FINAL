@@ -14,7 +14,7 @@ class DBManager(private val context:Context, dbName:String, factory:SQLiteDataba
     }
 
     constructor(context:Context):this(context, DB_NAME, null, DB_VERSION){}
-
+    //Creacion de las tablas
     override fun onCreate(db: SQLiteDatabase) {
 
         db.execSQL("CREATE TABLE CUIDADOS (CODIGO_CUIDADOS INTEGER PRIMARY KEY NOT NULL, ILUMINACION TEXT, TEMPERATURA TEXT, SUSTRATO TEXT, RIEGO TEXT, HUMEDAD TEXT, ABONO TEXT, PODA TEXT, ENFERMEDADES TEXT, TRANSPLANTE TEXT)")
@@ -23,7 +23,7 @@ class DBManager(private val context:Context, dbName:String, factory:SQLiteDataba
         db.execSQL("CREATE TABLE JARDIN (ID_PLANTA INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NOMBRE_PLANTA TEXT)")
         db.execSQL("CREATE TABLE USUARIOS (ID_USUARIO INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NOMBRE_USUARIO TEXT, CORREO TEXT, PASSWORD TEXT)")
 
-        db.execSQL("INSERT INTO USUARIOS (NOMBRE_USUARIO, CORREO, PASSWORD) VALUES ('admin', 'admin@admin', 'admin')")
+        db.execSQL("INSERT INTO USUARIOS (NOMBRE_USUARIO, CORREO, PASSWORD) VALUES ('admin', 'admin@admin.com', 'admin')")
 
 //        db.execSQL("INSERT INTO CUIDADOS (CODIGO_CUIDADOS, ILUMINACION, TEMPERATURA, SUSTRATO, RIEGO, HUMEDAD, ABONO, PODA, ENFERMEDADES, TRANSPLANTE) VALUES (10, '"+ getString(context,R.string.luz_azalea) + "', '" + getString(context,R.string.temperatura_azalea) + "', '" + getString(context, R.string.sustrato_azalea) + "', '" + getString(context, R.string.riego_azalea) + "', '" + getString(context, R.string.humedad_azalea) + "', '" + getString(context, R.string.abono_azalea) + "', '" + getString(context, R.string.poda_azalea) + "', '" + getString(context, R.string.enfermedades_azalea) + "', '" + getString(context, R.string.trasplante_azalea) + "')")
 //        db.execSQL("INSERT INTO CUIDADOS (CODIGO_CUIDADOS, ILUMINACION, TEMPERATURA, SUSTRATO, RIEGO, HUMEDAD, ABONO, PODA, ENFERMEDADES, TRANSPLANTE) VALUES (20, '"+ getString(context, R.string.luz_begonia) + "', '" + getString(context, R.string.temperatura_begonia) + "', '" + getString(context, R.string.sustrato_begonia) + "', '" + getString(context, R.string.riego_begonia) + "', '" + getString(context, R.string.humedad_begonia) + "', '" + getString(context, R.string.abono_begonia) + "', '" + getString(context, R.string.poda_begonia) + "', '" + getString(context, R.string.enfermedades_begonia) + "', '" + getString(context, R.string.trasplante_begonia) + "')")
@@ -76,10 +76,7 @@ class DBManager(private val context:Context, dbName:String, factory:SQLiteDataba
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-//        db.execSQL("DROP TABLE IF EXISTS CUIDADOS")
-//        db.execSQL("DROP TABLE IF EXISTS CATEGORIAS")
-//        db.execSQL("DROP TABLE IF EXISTS PLANTAS")
-//        db.execSQL("DROP TABLE IF EXISTS JARDIN")
+
     }
 
 }

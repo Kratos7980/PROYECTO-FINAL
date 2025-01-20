@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vista.PantallaPreferences">
+    tools:context=".view.PantallaPreferences">
 
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -18,7 +18,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:logo="@mipmap/greensnap_logo" />
+        app:logo="@mipmap/greensnap_logo"
+        app:title="@string/app_name"
+        app:titleCentered="true"
+        app:titleTextColor="#FFFFFF" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/settingsFragment"

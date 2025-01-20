@@ -179,4 +179,9 @@
     <string name="web">Web</string>
     <string name="settings">Ajustes</string>
     <string name="logout">Cerrar sesión</string>
+    <string name="user">Usuario o correo electronico</string>
+    <string name="password">Contraseña</string>
+    <string name="viewPass">Mostrar contraseña</string>
+    <string name="save">Guadar sesión</string>
+    <string name="login">Iniciar sesión</string>
 </resources>
