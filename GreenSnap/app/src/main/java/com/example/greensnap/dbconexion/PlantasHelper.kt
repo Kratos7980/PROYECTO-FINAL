@@ -31,6 +31,8 @@ object PlantasHelper {
                 listPlantas.add(planta)
             }while(fila.moveToNext())
         }
+        //Cierro la conexión a la base de datos
+        bd.close()
 
         return listPlantas
     }

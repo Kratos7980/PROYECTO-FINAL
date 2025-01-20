@@ -31,6 +31,8 @@ object UsuariosHelper {
                 listUsuarios.add(usuario)
             }while(fila.moveToNext())
         }
+        //Cierro la conexión a la base de datos
+        bd.close()
 
         return listUsuarios
     }
