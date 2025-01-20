@@ -198,4 +198,11 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- APP strings -->
+    <!-- Menu strings-->
+    <string name="inicio">Inicio</string>
+    <string name="web">Web</string>
+    <string name="settings">Ajustes</string>
+    <string name="logout">Cerrar sesión</string>
 </resources>

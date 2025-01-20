@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="principal_backgroud">#ABB69E</color>
+    <color name="btnLogin">#335902</color>
+    <color name="greensnap_logo">#D5DCDA</color>
 </resources>

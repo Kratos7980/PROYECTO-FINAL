@@ -167,4 +167,16 @@
     <string name="poda_violas">Tiende a perder gran parte de vitalidad cuando llegan los meses de calor tras su florecimiento, siendo habitual que la planta muera si no se hace nada. Para evitar esto, y conseguir que nuestra flor viva como una planta perenne en lugar de como una bianual, será necesario relaiza una poda agresiva en cuanto las temperaturas suba, dejando sólo el tallo.</string>
     <string name="enfermedades_violas">Una de las principales amenazas para esta planta es el ataque de los pulgones y los hongos como el oídio que es con el que hay que tener más cuidado.</string>
     <string name="trasplante_violas">El periodo perfecto es durante otoño-primavera permitiendo a la planta establecer raíces fuertes antes del calor del verano.</string>
+    <string name="messages_header">Mensajes</string>
+    <string name="sync_header">Sincroniza</string>
+    <string name="signature_title">Su firma</string>
+    <string name="reply_title">Acción de respuesta por defecto</string>
+    <string name="sync_title">Sincronizar el correo electrónico periódicamente</string>
+    <string name="attachment_title">Descargar archivos adjuntos entrantes</string>
+    <string name="attachment_summary_on">Descarga automática de archivos adjuntos en los correos electrónicos entrantes</string>
+    <string name="attachment_summary_off">Descargar archivos adjuntos sólo cuando se soliciten manualmente</string>
+    <string name="inicio">Inicio</string>
+    <string name="web">Web</string>
+    <string name="settings">Ajustes</string>
+    <string name="logout">Cerrar sesión</string>
 </resources>

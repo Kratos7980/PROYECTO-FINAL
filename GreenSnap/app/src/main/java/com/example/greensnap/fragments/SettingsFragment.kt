@@ -3,6 +3,8 @@ package com.example.greensnap.fragments
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import com.example.greensnap.R
@@ -24,18 +26,21 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        val sharedPreferences2 = PreferenceManager.getDefaultSharedPreferences(requireActivity())
-        val editor = sharedPreferences2?.edit()
+
         when (key){
-            "pref_checkbox" -> {
-                val isNotificationEnabled = sharedPreferences?.getBoolean(key, true) ?: true
+            "pref_modo_oscuro" -> {
+                val isDarkModeEnabled = sharedPreferences?.getBoolean("pref_modo_oscuro", false)?:false
+                if(isDarkModeEnabled){
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                }else{
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                }
+                Toast.makeText(this.context, "Modo Oscuro: $isDarkModeEnabled", Toast.LENGTH_SHORT).show()
             }
             "pref_usuario" -> {
-                var userName = sharedPreferences?.getString(key, "usuario2") ?: "usuario3"
+                var userName = sharedPreferences?.getString(key, "usuario") ?: "usuario"
                 if(userName.isBlank()){
-                    userName = "usuario2"
-                    editor?.putString(key, userName)
-                        editor?.commit()
+                    sharedPreferences?.edit()?.putString(key, "usuario")?.apply()
                 }
                 Log.e("Carlos", "valor por defecto: $userName")
             }
