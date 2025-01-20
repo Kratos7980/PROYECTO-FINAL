@@ -35,7 +35,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
                 if(userName.isBlank()){
                     userName = "usuario2"
                     editor?.putString(key, userName)
-                        editor?.apply()
+                        editor?.commit()
                 }
                 Log.e("Carlos", "valor por defecto: $userName")
             }
