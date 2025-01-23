@@ -38,6 +38,7 @@ class PlantasAdapter (private val listPlantas:ArrayList<Planta>, private val con
         // Defino en onClick de los items
         holder.itemView.setOnClickListener{
             val intent:Intent = Intent(context, PantallaPlantas::class.java)
+//            val planta =
             val bundle:Bundle = Bundle()
             context.startActivity(intent)
         }

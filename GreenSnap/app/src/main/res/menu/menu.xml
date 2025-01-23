@@ -8,6 +8,11 @@
         android:title="add"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/item_del"
+        android:icon="@drawable/baseline_delete_outline_24"
+        android:title="delete"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/item_home"
         android:title="@string/inicio" />
     <item

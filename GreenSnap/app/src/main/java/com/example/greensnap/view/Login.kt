@@ -27,7 +27,7 @@ class Login : AppCompatActivity() {
 
         //Si el usuario ha guardado sus datos, se muestra un mensaje de bienvenida y se redirige a la pantalla principal.
         if(sharedPreferences.getBoolean("save", false)){
-            val intent = Intent(this, Login::class.java)
+            val intent = Intent(this, PantallaPrincipal::class.java)
             startActivity(intent)
             finish()
         }else{
@@ -56,7 +56,7 @@ class Login : AppCompatActivity() {
                         }
 
                         //Redirijo a la pantalla principal
-                        val intent = Intent(this, Login::class.java)
+                        val intent = Intent(this, PantallaPrincipal::class.java)
                         startActivity(intent)
                         finish()
                     }else{
