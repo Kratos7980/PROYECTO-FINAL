@@ -30,5 +30,5 @@
         android:clipToPadding="false"
         android:paddingTop="25dp"
         android:paddingBottom="40dp"
-        tools:listitem="@layout/item_plantas" />
+        tools:listitem="@layout/item_jardin" />
 </LinearLayout>
