@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.PantallaCuidados">
+    android:orientation="vertical"
+    tools:context=".view.PantallaPrincipal">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/menuPrincipal"
@@ -22,26 +23,19 @@
         app:titleCentered="true"
         app:titleTextColor="#FFFFFF" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItemsList"
+        android:layout_width="414dp"
+        android:layout_height="640dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="1dp"
+        android:clipToPadding="false"
+        android:paddingTop="25dp"
+        android:paddingBottom="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menuPrincipal"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewParger"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" >
-
-    </androidx.viewpager2.widget.ViewPager2>
-
+        tools:listitem="@layout/item_jardin" />
 </androidx.constraintlayout.widget.ConstraintLayout>

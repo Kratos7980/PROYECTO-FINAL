@@ -7,6 +7,10 @@ android {
     namespace = "com.example.greensnap"
     compileSdk = 35
 
+    androidResources {
+        generateLocaleConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.example.greensnap"
         minSdk = 24

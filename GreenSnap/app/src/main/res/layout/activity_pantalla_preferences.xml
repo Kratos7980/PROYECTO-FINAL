@@ -9,7 +9,7 @@
 
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
+        android:id="@+id/menuPrincipal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/greensnap_logo"
@@ -31,5 +31,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/menuPrincipal" />
 </androidx.constraintlayout.widget.ConstraintLayout>

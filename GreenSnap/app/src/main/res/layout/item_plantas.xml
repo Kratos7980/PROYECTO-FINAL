@@ -39,17 +39,6 @@
                 android:textSize="19sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/descripcionItem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="20dp"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="El dia del juicio final llegará cuando la galaxia padre atraviese la hija, eso provocará una fusion entre dimensiones que colapsará el universo tal y como lo conocemos."
-                android:textSize="18sp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

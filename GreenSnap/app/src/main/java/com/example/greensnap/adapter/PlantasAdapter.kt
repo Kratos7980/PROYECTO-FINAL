@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.greensnap.view.PantallaPlantas
 import com.example.greensnap.R
 import com.example.greensnap.model.Planta
+import com.example.greensnap.view.PantallaInformacion
 
 class PlantasAdapter (private val listPlantas:ArrayList<Planta>, private val context: Context) : RecyclerView.Adapter<PlantasViewHolder>(){
 
@@ -31,14 +31,15 @@ class PlantasAdapter (private val listPlantas:ArrayList<Planta>, private val con
 
         // Pongo los datos en el viewHolder
         holder.nombrePlantaItem.setText(planta.nombre_planta)
-        holder.descripcionItem.setText(planta.tipo)
         val imageResourceId = holder.itemView.context.resources.getIdentifier(planta.imagen,"drawable", holder.itemView.context.packageName)
         holder.imageItem.setImageResource(imageResourceId)
 
         // Defino en onClick de los items
         holder.itemView.setOnClickListener{
-            val intent:Intent = Intent(context, PantallaPlantas::class.java)
+            val intent:Intent = Intent(context, PantallaInformacion::class.java)
             val bundle:Bundle = Bundle()
+            bundle.putSerializable("planta", planta)
+            intent.putExtra("datos", bundle)
             context.startActivity(intent)
         }
 

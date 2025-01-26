@@ -8,7 +8,7 @@
     tools:context=".view.PantallaCuidados">
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
+        android:id="@+id/menuPrincipal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/greensnap_logo"
@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/menuPrincipal"
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.viewpager2.widget.ViewPager2

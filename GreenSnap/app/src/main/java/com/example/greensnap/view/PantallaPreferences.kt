@@ -1,11 +1,20 @@
 package com.example.greensnap.view
 
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
+import com.example.greensnap.R
 import com.example.greensnap.databinding.ActivityPantallaPreferencesBinding
+import com.google.android.material.appbar.MaterialToolbar
 
 class PantallaPreferences : AppCompatActivity() {
     private lateinit var binding: ActivityPantallaPreferencesBinding
@@ -32,4 +41,5 @@ class PantallaPreferences : AppCompatActivity() {
 
 
     }
+
 }

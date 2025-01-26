@@ -26,7 +26,7 @@ class Login : AppCompatActivity() {
         val editor = sharedPreferences.edit()
 
         //Si el usuario ha guardado sus datos, se muestra un mensaje de bienvenida y se redirige a la pantalla principal.
-        if(sharedPreferences.getBoolean("save", false)){
+        if(sharedPreferences.getBoolean("sesion", false)){
             val intent = Intent(this, PantallaPrincipal::class.java)
             startActivity(intent)
             finish()
