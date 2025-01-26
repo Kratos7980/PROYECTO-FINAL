@@ -51,7 +51,7 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
         AlertDialog.Builder(this.context)
             .setTitle("Modo Oscuro")
             .setMessage("Modo oscuro ${if(boolean) "activado" else "desactivado"}")
-            .setIcon(R.drawable.modo_oscuro_activo)
+            .setIcon(R.drawable.baseline_dark_mode_24)
             .show()
     }
 }
