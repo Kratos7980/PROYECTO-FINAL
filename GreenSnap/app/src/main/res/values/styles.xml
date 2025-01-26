@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="buttonLogin">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">9dp</item>
+        <item name="android:layout_marginBottom">79dp</item>
+        <item name="android:backgroundTint">@color/btnLogin</item>
+        <item name="android:text">@string/login</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name= "buttonAdd">
+        <item name="android:layout_width">63dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_marginTop">96dp</item>
+        <item name="android:layout_marginEnd">25dp</item>
+        <item name="android:backgroundTint">@color/btnLogin</item>
+    </style>
+</resources>

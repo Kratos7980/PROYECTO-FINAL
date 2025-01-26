@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.greensnap.databinding.ActivityPantallaInformacionBinding
 import com.example.greensnap.dbconexion.JardinHelper
 import com.example.greensnap.model.Planta
+import com.example.greensnap.viewModel.CategoriasViewModel
 
 class PantallaInformacion : AppCompatActivity() {
 
@@ -23,8 +24,12 @@ class PantallaInformacion : AppCompatActivity() {
         val bundle = intent.getBundleExtra("datos")
         val planta = bundle?.getSerializable("planta", Planta::class.java) as Planta
 
+        val viewCategoria = CategoriasViewModel(this)
+        var descripcion = viewCategoria.getDescripcionById(planta.id_categoria)
+
         binding.imgPlanta.setImageResource(resources.getIdentifier(planta.imagen, "drawable", this.packageName))
         binding.titleInfo.text = planta.nombre_planta
+        binding.txtDesc.text = descripcion
 
         binding.btnAdd.setOnClickListener {
             AlertDialog(planta)

@@ -21,12 +21,12 @@ object JardinHelper {
         val listPlantas:ArrayList<Planta> = ArrayList<Planta>()
 
         //Recupero los datos de la base de datos
-        val fila = bd.rawQuery("select id_planta, nombre_planta, imagen from JARDIN ", arrayOf())
+        val fila = bd.rawQuery("select id_planta, nombre_planta, imagen, id_categoria from JARDIN", arrayOf())
 
         //Si hay plantas en la base de datos, creo un objeto planta y lo añado a la lista.
         if (fila.moveToFirst()){
             do {
-                planta = Planta(fila.getInt(0), fila.getString(1), fila.getString(2))
+                planta = Planta(fila.getInt(0), fila.getString(1), fila.getString(2), fila.getInt(3))
                 listPlantas.add(planta)
             }while(fila.moveToNext())
         }
@@ -40,8 +40,10 @@ object JardinHelper {
         val dbManager = DBManager(context)
         val db = dbManager.writableDatabase
         val values = ContentValues()
+        values.put("ID_PLANTA", planta.id)
         values.put("NOMBRE_PLANTA", planta.nombre_planta)
         values.put("IMAGEN", planta.imagen)
+        values.put("ID_CATEGORIA", planta.id_categoria)
         db.insert("JARDIN", null, values)
         db.close()
     }

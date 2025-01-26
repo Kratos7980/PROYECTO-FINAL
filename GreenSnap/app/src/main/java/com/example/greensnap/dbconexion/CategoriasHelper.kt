@@ -29,4 +29,24 @@ object CategoriasHelper {
 
         return codigo_cuidado
     }
+
+    fun getDescripcionById(id_categoria:Int, context: Context):String{
+
+        // Instancio la base de datos.
+        val dbManager = DBManager(context)
+        // Abro la base de datos.
+        val bd:SQLiteDatabase = dbManager.readableDatabase
+        // Creo la variable donde se guardará la descripción.
+        var descripcion = ""
+        // Recupero los datos de la base de datos.
+        val fila = bd.rawQuery("SELECT descripcion FROM CATEGORIAS WHERE id_categoria = ?", arrayOf(id_categoria.toString()))
+        // Si hay registros devueltos de la base de datos, guardo la descripción.
+        if (fila.moveToFirst()) {
+            descripcion = fila.getString(0)
+        }
+        // Cierro la conexión a la base de datos.
+        bd.close()
+
+        return descripcion
+    }
 }

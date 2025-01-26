@@ -13,6 +13,8 @@ import com.example.greensnap.dbconexion.CategoriasHelper
 import com.example.greensnap.dbconexion.CuidadosHelper
 import com.example.greensnap.model.Cuidado
 import com.example.greensnap.model.Planta
+import com.example.greensnap.viewModel.CategoriasViewModel
+import com.example.greensnap.viewModel.CuidadoViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,9 +43,13 @@ class CuidadosFragment : Fragment() {
     ): View? {
         binding = FragmentCuidadosBinding.inflate(inflater,container,false)
         val view = binding.root
+
+        val viewCategoria = CategoriasViewModel(requireActivity())
+        val viewCuidado = CuidadoViewModel(requireActivity())
+
         if(planta != null) {
-            val codigo_cuidado = CategoriasHelper.obtenerCodigoCuidadosByIdCategoria(planta?.id_categoria, requireActivity())
-            val cuidado: Cuidado? = CuidadosHelper.obtenerCuidados(codigo_cuidado, requireActivity())
+            val codigo_cuidado = viewCategoria.getIdCuidado(planta?.id_categoria)
+            val cuidado: Cuidado? = viewCuidado.getCuidado(codigo_cuidado)
 
             if (codigo_cuidado != -1 && cuidado != null) {
                 binding.titleC.text = getString(R.string.luz)

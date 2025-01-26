@@ -1,5 +1,6 @@
 package com.example.greensnap.fragments
 
+import android.app.AlertDialog
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
@@ -35,15 +36,22 @@ class SettingsFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedP
                 }else{
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 }
-                Toast.makeText(this.context, "Modo Oscuro: $isDarkModeEnabled", Toast.LENGTH_SHORT).show()
+                showAlertDialog(isDarkModeEnabled)
             }
             "pref_usuario" -> {
                 var userName = sharedPreferences?.getString(key, "usuario") ?: "usuario"
                 if(userName.isBlank()){
                     sharedPreferences?.edit()?.putString(key, "usuario")?.apply()
                 }
-                Log.e("Carlos", "valor por defecto: $userName")
             }
         }
+    }
+
+    private fun showAlertDialog(boolean:Boolean){
+        AlertDialog.Builder(this.context)
+            .setTitle("Modo Oscuro")
+            .setMessage("Modo oscuro ${if(boolean) "activado" else "desactivado"}")
+            .setIcon(R.drawable.modo_oscuro_activo)
+            .show()
     }
 }

@@ -37,7 +37,7 @@
                 android:id="@+id/titleInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="59dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="12dp"
                 android:textSize="30sp"
                 android:textStyle="bold"
@@ -46,14 +46,25 @@
 
             <Button
                 android:id="@+id/btnAdd"
-                android:layout_width="63dp"
+                android:layout_width="105dp"
                 android:layout_height="48dp"
                 android:layout_marginTop="96dp"
-                android:layout_marginEnd="48dp"
+                android:layout_marginEnd="25dp"
                 android:backgroundTint="@color/btnLogin"
-                app:icon="@drawable/baseline_add_24"
+                android:text="Añadir"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgPlanta" />
+
+            <TextView
+                android:id="@+id/txtDesc"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

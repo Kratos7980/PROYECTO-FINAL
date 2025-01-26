@@ -102,6 +102,7 @@
         android:backgroundTint="@color/btnLogin"
         android:text="@string/login"
         android:textSize="20sp"
+        style="@style/buttonLogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

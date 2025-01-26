@@ -1,12 +1,13 @@
 package com.example.greensnap.dbconexion
 
+import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import com.example.greensnap.model.Planta
 
 object PlantasHelper {
     //Recupero la lista de plantas
-    fun recuperarPlantasBD(context:AppCompatActivity):ArrayList<Planta>{
+    fun recuperarPlantasBD(context:Context):ArrayList<Planta>{
 
         //Creo un objeto planta
         var planta:Planta? = null

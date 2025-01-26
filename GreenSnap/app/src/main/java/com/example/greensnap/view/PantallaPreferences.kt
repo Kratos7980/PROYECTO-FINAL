@@ -26,8 +26,6 @@ class PantallaPreferences : AppCompatActivity() {
         // Configuro el modo oscuro de la app si el usuario lo ha seleccionado.
         val isDarkModeEnabled = sharedPreferences?.getBoolean("pref_modo_oscuro", false) ?: false
 
-        Toast.makeText(this, "PantallaPreferences-Modo Nocturno: $isDarkModeEnabled ", Toast.LENGTH_SHORT).show()
-
         if (isDarkModeEnabled){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
