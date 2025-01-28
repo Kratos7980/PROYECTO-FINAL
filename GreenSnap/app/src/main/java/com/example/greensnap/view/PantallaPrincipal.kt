@@ -63,7 +63,6 @@ class PantallaPrincipal : AppCompatActivity() {
                 // Cambio a la activity de añadir planta
                 intent = Intent(this, PantallaPlantas::class.java)
                 startActivity(intent)
-                finish()
                 true
             }
 
