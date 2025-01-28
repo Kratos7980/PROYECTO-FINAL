@@ -1,5 +1,6 @@
 package com.example.greensnap.adapter
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -41,6 +42,9 @@ class PlantasAdapter (private val listPlantas:ArrayList<Planta>, private val con
             bundle.putSerializable("planta", planta)
             intent.putExtra("datos", bundle)
             context.startActivity(intent)
+            if (context is Activity) {
+                (context as Activity).finish()
+            }
         }
 
     }
