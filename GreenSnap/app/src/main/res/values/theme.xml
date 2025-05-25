@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.GreenSnap" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your light theme here.-->
+        <item name="colorPrimary">@color/buttons</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/toolbars</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="android:colorBackground">@color/greensnap_logo_background</item>
+    </style>
+    <!-- <style name="Theme.LinearLayout" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+         <item name="background">@color/principal_backgroud</item>
+     </style>
+     <style name="BottomNavigationView" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+         <item name="itemTextColor">@color/bottom_nav_item_text_color_selector</item>
+     </style>-->
+ </resources>

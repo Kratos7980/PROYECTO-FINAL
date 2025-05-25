@@ -3,6 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="principal_backgroud">#ABB69E</color>
-    <color name="btnLogin">#335902</color>
-    <color name="greensnap_logo">#D5DCDA</color>
+    <color name="buttons">#31683c</color>
+    <color name="greensnap_logo">#D5DCDA</color>"
+    <color name="tabsSelect">#76A976</color>
+    <color name="toolbars">#4e9c44</color>
+    <color name="background_night">#817F7F</color>
 </resources>

@@ -6,35 +6,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".view.PantallaPrincipal">
+    android:background="@color/greensnap_logo_background"
+    tools:context=".view.PantallaPrincipal"
+    tools:openDrawer="start">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/menuPrincipal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greensnap_logo"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:logo="@mipmap/greensnap_logo"
-        app:title="@string/app_name"
-        app:titleCentered="true"
-        app:titleTextColor="#FFFFFF" />
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:menu="@menu/menu"
+                app:liftOnScroll="true">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvItemsList"
-        android:layout_width="414dp"
-        android:layout_height="640dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:clipToPadding="false"
-        android:paddingTop="25dp"
-        android:paddingBottom="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menuPrincipal"
-        tools:listitem="@layout/item_jardin" />
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/menuPrincipal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="?attr/actionBarSize"
+                    android:background="@color/toolbars"
+                    app:logo="@mipmap/greensnap_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:menu="@menu/menu"
+                    app:subtitleCentered="true"
+                    app:title="@string/app_name"
+                    app:subtitle="Mi Jardin"
+                    app:titleCentered="true"
+                    app:titleTextColor="#FFFFFF"
+                    app:subtitleTextColor="#FFFFFF"
+                    fontFamily="@font/amaranth"/>
+
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvItemsList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingTop="25dp"
+                android:paddingBottom="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+                tools:ignore="MissingConstraints"
+                tools:listitem="@layout/item_jardin" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:background="@color/toolbars"
+                app:itemTextColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:menu="@menu/menu3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

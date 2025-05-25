@@ -1,3 +1,9 @@
 package com.example.greensnap.model
 
-data class Cuidado(val codigo:Int, val iluminacion:String, val temperatura:String, val sustrato:String, val riego:String, val humedad:String, val abono:String, val poda:String, val enfermedades:String, val trasplante:String)
+import java.io.Serializable
+
+data class Cuidado(
+    val codigo:Int,
+    val descripcion:String,
+    val id_tipo_cuidado:Int
+):Serializable

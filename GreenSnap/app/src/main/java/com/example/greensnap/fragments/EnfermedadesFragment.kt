@@ -6,19 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import com.example.greensnap.R
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.greensnap.databinding.FragmentEnfermedadesBinding
-import com.example.greensnap.dbconexion.CategoriasHelper
-import com.example.greensnap.dbconexion.CuidadosHelper
-import com.example.greensnap.model.Cuidado
+import com.example.greensnap.model.PlantaJardin
+import com.example.greensnap.viewModel.EnfermedadesViewModel
+import com.example.greensnap.adapter.EnfermedadesAdapter
 import com.example.greensnap.model.Planta
-import com.example.greensnap.viewModel.CategoriasViewModel
-import com.example.greensnap.viewModel.CuidadoViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "planta"
+private const val ARG_PARAM1 = "plantaJ"
+private const val ARG_PARAM2 = "planta"
 
 /**
  * A simple [Fragment] subclass.
@@ -26,15 +26,17 @@ private const val ARG_PARAM1 = "planta"
  * create an instance of this fragment.
  */
 class EnfermedadesFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var planta: Planta? = null
+
+    private lateinit var planta: Planta
     private lateinit var binding: FragmentEnfermedadesBinding
+    private lateinit var myAdapter: EnfermedadesAdapter
+    private val viewModelEnfermedad: EnfermedadesViewModel by viewModels()
 
     @SuppressLint("NewApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            planta = it.getSerializable(ARG_PARAM1) as Planta
+            planta = it.getSerializable(ARG_PARAM2) as Planta
         }
     }
 
@@ -45,23 +47,21 @@ class EnfermedadesFragment : Fragment() {
         binding = FragmentEnfermedadesBinding.inflate(inflater,container,false)
         val view = binding.root
 
-        val viewCategoria = CategoriasViewModel(requireActivity())
-        val viewCuidado = CuidadoViewModel(requireActivity())
-
-        if(planta != null) {
-            val codigo_cuidado = viewCategoria.getIdCuidado(planta?.id_categoria)
-            val cuidado: Cuidado? = viewCuidado.getCuidado(codigo_cuidado)
-
-            if (codigo_cuidado != -1 && cuidado != null) {
-                binding.titleE.text = getString(R.string.enfermedades)
-                binding.contE.text = cuidado.enfermedades
-            }else{
-                Toast.makeText(requireActivity(), "No se pudiron recuperar los datos", Toast.LENGTH_SHORT).show()
-            }
-        }else{
-            Toast.makeText(requireActivity(), "Planta is null", Toast.LENGTH_SHORT).show()
+        val bundle = requireActivity().intent.getBundleExtra("datos")
+        if(bundle != null){
+            val planta = bundle?.getSerializable("planta") as Planta
         }
+        val listEnfermedades = viewModelEnfermedad.getEnfermedadesPlanta(planta.cod_enfermedad)
 
+        //Muestro la lista de plantas en el recycler view
+        val rv: RecyclerView? = binding.rvItemsCuidados
+
+        //Creo el adaptador
+        myAdapter = EnfermedadesAdapter(listEnfermedades,planta ,requireActivity())
+
+        //Añado el adaptador al recycler view
+        rv?.layoutManager = LinearLayoutManager(requireActivity())
+        rv?.adapter = myAdapter
         return view
     }
 
@@ -76,10 +76,10 @@ class EnfermedadesFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(planta: Planta) =
+        fun newInstance(planta:Planta?) =
             EnfermedadesFragment().apply {
                 arguments = Bundle().apply {
-                    putSerializable(ARG_PARAM1, planta)
+                    putSerializable(ARG_PARAM2, planta)
                 }
             }
     }

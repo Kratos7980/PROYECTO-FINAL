@@ -1,6 +1,8 @@
 <resources>
     <!-- Nombre Aplicación -->
     <string name="app_name">GreenSnap</string>
+    <string name="open_drawer">Open navigation drawer</string>
+    <string name="close_drawer">Close navigation drawer</string>
 
     <!-- Cuidados -->
     <string name="luz">Iluminacion</string>
@@ -31,9 +33,11 @@
     <!-- APP strings -->
     <!-- Menu strings-->
     <string name="inicio">Inicio</string>
+    <string name="jardin">Mi jardin</string>
+    <string name="guia">Guia</string>
+    <string name="ubicacion">Ubicacion</string>
     <string name="web">Web</string>
     <string name="settings">Ajustes</string>
-    <string name="logout">Cerrar sesión</string>
 
     <!-- Menu strings-->
     <string name="user">Usuario o correo electronico</string>
@@ -41,5 +45,7 @@
     <string name="viewPass">Mostrar contraseña</string>
     <string name="save">Guadar sesión</string>
     <string name="login">Iniciar sesión</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

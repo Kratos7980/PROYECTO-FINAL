@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group_menu">
+        <item
+            android:id="@+id/item_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="jardin"
+            android:icon="@drawable/icon_my_garden"/>
+        <item
+            android:id="@+id/item_guia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="guia"
+            android:icon="@drawable/icon_guide"/>
+        <item
+            android:id="@+id/item_ubicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="ubicacion"
+            android:icon="@drawable/icons_location"/>
+
+
+    </group>
+    <group android:id="@+id/group_menu_web">
+        <item
+            android:id="@+id/item_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:title="@string/web"
+            android:icon="@drawable/icon_web"/>
+    </group>
+
+</menu>

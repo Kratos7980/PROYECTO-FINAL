@@ -14,4 +14,5 @@ class JardinViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     //Recupero los elementos del xml con el binding
     val imageItem: ImageView = binding.imageItem
     val nombrePlantaItem: TextView = binding.nombrePlantaItem
+    val nameCientifico: TextView = binding.nameCientifico
 }

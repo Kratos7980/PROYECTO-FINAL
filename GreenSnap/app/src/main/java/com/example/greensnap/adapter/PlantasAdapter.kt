@@ -18,7 +18,7 @@ class PlantasAdapter (private val listPlantas:ArrayList<Planta>, private val con
 
         //Creo un layoutInflater
         val layoutInflater = LayoutInflater.from(parent.context)
-        //
+
         return PlantasViewHolder(layoutInflater.inflate(R.layout.item_plantas, parent, false))
     }
     //Recupero el tamaño de la lista
@@ -42,9 +42,6 @@ class PlantasAdapter (private val listPlantas:ArrayList<Planta>, private val con
             bundle.putSerializable("planta", planta)
             intent.putExtra("datos", bundle)
             context.startActivity(intent)
-            if (context is Activity) {
-                (context as Activity).finish()
-            }
         }
 
     }
